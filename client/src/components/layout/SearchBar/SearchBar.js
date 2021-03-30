@@ -1,12 +1,16 @@
 import React, { useRef } from 'react';
 import './SearchBar.css';
+import { useDispatch } from 'react-redux';
+import { sendSearch } from '../../../redux/actions/videoActions';
 
 const SearchBar = () => {
+  const dispatch = useDispatch();
   const text = useRef('');
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(text.current.value);
+    let query = text.current.value;
+    dispatch(sendSearch(query));
   };
 
   return (
