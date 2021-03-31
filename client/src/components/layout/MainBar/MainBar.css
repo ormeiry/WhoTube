@@ -4,11 +4,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  user-select: none;
 }
 
 .main-bar h1 {
   margin: 0;
-  padding: 1.5rem;
+  padding: 0.5rem;
   font-size: var(--mobile-title);
   letter-spacing: 0.3rem;
   color: var(--w-text);
@@ -27,9 +28,10 @@ a {
   color: var(--w-text);
 }
 
-li .active {
+.main-bar-link .active {
   border-bottom: 1.3px solid var(--primary);
-  border-top: 1.3px solid var(--primary);
+  border-top: 1.5px solid var(--primary);
+  user-select: none;
 }
 
 @media screen and (min-width: 760px) {
@@ -43,8 +45,9 @@ li .active {
   }
 
   .main-bar h1 {
-    font-size: var(--desktop-title);
+    font-size: 3rem;
     letter-spacing: 0.3rem;
+    margin-left: 4rem;
   }
 
   .nav-links {

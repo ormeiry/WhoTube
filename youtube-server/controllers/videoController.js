@@ -1,6 +1,4 @@
 const httpService = require('../services/httpService');
-const fs = require('fs');
-const path = require('path').join(__dirname, '../db_config/sampleData.json');
 const Boom = require('boom');
 
 const FavVideo = require('../db_config/models/FavVideo');
@@ -43,25 +41,18 @@ exports.getSingleVideo = async (req, res) => {
 };
 
 exports.getTrendVideos = async (req, res) => {
-  // const params = {
-  //     chart: 'mostPopular',
-  //     pageToken: req.query.page || '',
-  // };
+  const params = {
+    chart: 'mostPopular',
+    pageToken: req.query.page || '',
+  };
 
   try {
-    // const {
-    //   data: { items, nextPageToken },
-    // } = await httpService.fetchVideos(params);
-
-    fs.readFile(path, (err, data) => {
-      if (err) console.log(err);
-      const { items, nextPageToken } = JSON.parse(data);
-      res.json({ items, nextPageToken });
-    });
-    // res.json({ items: formatVideoItems(items), nextPageToken });
-  } catch (err) {
-    // { response: { status, data } }
-    res.status(400).send(err);
+    const {
+      data: { items, nextPageToken },
+    } = await httpService.fetchVideos(params);
+    res.json({ items: formatVideoItems(items), nextPageToken });
+  } catch ({ response: { status, data } }) {
+    res.status(status).send(data);
   }
 };
 

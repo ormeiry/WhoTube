@@ -18,7 +18,16 @@ const initialState = {
     nextPageToken: null,
   },
   favVideos: [],
+  favIds: {},
 };
+
+function fillFavIds(arr) {
+  const fillArr = {};
+  arr.forEach((item) => {
+    fillArr[item.id] = true;
+  });
+  return fillArr;
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -45,17 +54,20 @@ export default (state = initialState, action) => {
         ...state,
         favVideos: [...action.payload],
         loading: false,
+        favIds: fillFavIds(action.payload),
       };
     case ADD_FAV:
       return {
         ...state,
-        favVideos: [...state.favVideos, ...action.payload],
+        favVideos: [...state.favVideos, action.payload],
+        favIds: { ...state.favIds, [action.payload.id]: true },
         loading: false,
       };
     case DELETE_FAV:
       return {
         ...state,
         favVideos: state.favVideos.filter((vid) => vid.id !== action.payload),
+        favIds: { ...state.favIds, [action.payload]: false },
         loading: false,
       };
     case SET_LOADING:

@@ -9,10 +9,10 @@ function MainBar() {
         <h1>WhoTube</h1>
       </NavLink>
       <ul className='nav-links'>
-        <li>
+        <li className='main-bar-link'>
           <NavLink to='/trends'>Trends</NavLink>
         </li>
-        <li>
+        <li className='main-bar-link'>
           <NavLink to='/mylibrary'>My Library</NavLink>
         </li>
       </ul>

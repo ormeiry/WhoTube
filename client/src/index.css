@@ -1,14 +1,14 @@
 :root {
-  --primary: #141414;
-  --secondary: #3a6d38;
+  --primary: #0e0e0e;
+  --secondary: #800101;
   --third: #f5f8ce;
   --w-text: #f6fbfb;
-  --mobile-p: 1.1rem;
+  --mobile-p: 0.9rem;
   --pad-p: 1.9rem;
-  --desktop-p: 1.8rem;
-  --mobile-title: 1.3rem;
+  --desktop-p: 0.8rem;
+  --mobile-title: 1.1rem;
   --pad-title: 3.3rem;
-  --desktop-title: 3.3rem;
+  --desktop-title: 0.8rem;
 }
 
 body {

@@ -1,0 +1,15 @@
+.pagination {
+  width: fit-content;
+  display: flex;
+  user-select: none;
+}
+
+#page-item .active {
+  color: var(--primary);
+}
+
+.page-item {
+  padding: 5px 10px;
+  margin-right: 10px;
+  background-color: var(--secondary);
+}
