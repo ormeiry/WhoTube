@@ -16,7 +16,7 @@ ul {
 
 @media screen and (min-width: 992px) {
   .app-wrapper {
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
   }
 }

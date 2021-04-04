@@ -46,6 +46,7 @@ a {
 
   .main-bar h1 {
     font-size: 3rem;
+    padding: 0.2rem;
     letter-spacing: 0.3rem;
     margin-left: 4rem;
   }

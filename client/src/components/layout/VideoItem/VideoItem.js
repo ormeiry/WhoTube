@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { delFav, addFav, getFavs } from '../../../redux/actions/videoActions';
+import { delFav, addFav } from '../../../redux/actions/videoActions';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './VideoItem.css';

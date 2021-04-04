@@ -11,7 +11,7 @@ function VideoScreen({
 }) {
   return (
     <>
-      <h1 style={{ marginTop: '4rem' }}>{title}</h1>
+      <h1 id='title'>{title}</h1>
       <ul className='videos-wrapper'>
         {videoItems?.length &&
           currentVids.map((vid) => (
